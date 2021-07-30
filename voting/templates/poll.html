@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	     <link href="{{ url_for('static', filename='info.css') }}" rel="stylesheet"/>
+	    <title>Voting</title>
+	
+	</head>
+	
+	<body>
+	
+		<div class = "wrapper">
+			
+			<div class = "homebutton">			
+				<a class = 'menu' href = "{{url_for('home.home')}}">Home</a>
+			</div>
+			
+			<div class = "logout">
+				<a class = "menu" href = "{{url_for('logout')}}">Logout</a>
+			</div>
+			
+			<div class = "notification">
+				<p class = "msg">{{s}}</p>
+			</div>
+			<div class = "container">	
+				{% for creator, pollname, polldp, starttime, endtime, pollid in pollinfo %}
+				<h2 class = "head">{{pollname}}</h2>
+				
+				<div class = "description">
+					<h3>Description:{{polldp}}</h2>
+			
+				</div>
+				
+				<div class = "details">
+					<p>Creator:{{creator}}</p>
+						
+					Start Time : {{starttime}}
+					<br>
+					End Time : {{endtime}}
+				</div>
+					
+					<br>
+		
+				<form id = "options" method = "POST" action = "{{url_for('home.poll', pollid = pollid)}}">
+					{% for id, option in options%}
+						<label for = "{{id}}">{{option}}</label>
+						<input type = "radio" id = "{{id}}" value = "{{id}}" name = "option">
+					{% endfor %}
+					
+					<input class = "submit" type = "submit" value = "submit">
+				</form>
+				
+				{% endfor %}
+				
+			</div>
+		</div>				
+	</body>
+</html>

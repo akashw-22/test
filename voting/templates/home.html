@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link href="{{ url_for('static', filename='home.css') }}" rel="stylesheet"/>
+	    <title>Voting</title>
+	
+	</head>
+	
+	<body>
+	
+		<div class = "wrapper">
+			<div class = "col1">
+				Welcome {{name}}
+			</div>
+			<div class = "logout">
+				<a class = "menu" href = "{{url_for('logout')}}">Logout</a>
+			</div>
+		
+		
+			<div class = "createpoll">
+				<form  id = "createpoll" method = "POST" action = "{{url_for('home.home')}}">
+					<input class = "button" type = "submit" value = "Create Poll">
+					<br>
+					<p class = "divtext">Create Polls to Vote Anonymously</p>
+				</form>
+			</div>
+			
+			<div class = "Yourpolls">
+				<a class = "button" href = "{{url_for('yourpolls.yourpolls')}}">Your polls</a>
+				<br>
+				<p class = "divtext">View info on the polls you created</p>
+			</div>
+
+			<div class = "Running">
+				
+				<p class = "divtext" >Running Polls : {{count}}</p>
+				
+				<br>
+				
+				<div class = "rows">
+				
+					<table>
+						<thead>
+							<tr>
+								<th>Poll</th>
+								<th>Creator</th>
+								<th>End Time</th>
+							</tr>
+						</thead>					
+					
+						<tbody>
+							{% for (poll_name, creator, endtime, id) in l%}
+							<tr class = "row" onclick ="document.location = '{{url_for('home.poll', pollid = id)}}'">
+								<td>{{poll_name}}</td>
+								<td>{{creator}}</td>
+								<td>{{endtime}}</td>
+							<tr>
+							{% endfor %}
+						</div>
+						</tbody>
+				
+					</table>		
+				</div>		
+			</div>
+		</div>
+		
+	</body>
+</html>

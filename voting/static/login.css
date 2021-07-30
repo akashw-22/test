@@ -1,0 +1,82 @@
+body{
+	background: dodgerblue linear-gradient(45deg, #091848e6, #6c24a5cc, #762479ed) fixed;
+	 
+}
+.card{
+	background-color : #19161a;
+	border-radius: 5px;
+	text-align: center;
+	padding : 10px;
+	padding-bottom :30px;
+	color : #aaa;
+	font-size : 25px;
+	font-family : sans-serif;
+    margin:70px 10% 10px 10%;
+	box-shadow: 0 10px 20px #c7b6b6a1;
+	}
+	
+.cardtitle{
+	   font-size:150%;
+}
+
+.label{
+	display: inline-block;
+  width: 140px;
+  text-align: center;
+  line-height:4ex;
+}
+
+input[type = submit] {
+            background-color: #6148aa;
+            border: none;
+            text-decoration: none;
+            font-size:20px;
+            color: #ccc;
+            padding: 15px 35px;
+            margin: 5%;
+            cursor: pointer;
+            border-radius:5px;
+            transition: background-color 0.5s;
+}
+
+.textbox{
+	background:transparent;
+	border-radius:5px;
+	border-color:#ccc;
+	border-width:thin;
+	outline:transparent;
+	color:#aaa;
+	text-align:center;
+	border: 0;
+	font-size:20px;
+	font-weight:bold;
+    outline: 0;
+	background: transparent;
+	line-height:4ex;
+    border-bottom: 1px solid #6148aa;
+    transition: border-color 0.5s;
+    transition: border-width 0.5s;
+
+}
+
+.textbox:focus{
+    border-color:#6f3c87;
+    border-width:thick;
+}
+.textbox:hover{
+	border-width:thick;
+}
+
+input[type = submit]:hover{
+
+	background-color:#262f79;
+
+}
+
+input[type = submit]:focus{
+
+	background-color:#061276;
+
+}
+
+

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link href="{{ url_for('static', filename='info.css') }}" rel="stylesheet"/>
+	    
+	    <title>Voting</title>
+	
+	</head>
+	
+	<body>
+		<div class = "wrapper">
+			<div class = "homebutton">			
+				<a class = 'menu' href = "{{url_for('home.home')}}">Home</a>
+			</div>
+			
+			<div class = "logout">
+				<a class = "menu" href = "{{url_for('logout')}}">Logout</a>
+			</div>
+			
+			<div class = "container">
+				<h3 class = "head">Create Polls<h3>
+		
+				<form id = "createpoll" method = "post" action = "{{url_for('home.createpoll')}}">
+			
+					<label for = "pollname">Poll Name:</label>
+					<input class = "textbox" id = "pollname" type = "text" name = "pollname" required>
+					<br>
+			
+					<label for = "polldp">Poll Description:</label>
+					<input class = "textbox" id = "polldp" type = "text" name = "polldp" required>
+					<br>
+			
+					<label for = "endtime">Poll Endtime:</label>
+					<input class = "textbox" id = "endtime" type = "datetime-local" name = "endtime" placeholder = "yyyy-mm-dd hh:mm:ss"required>
+					<br>
+			
+					<label for = "A">Enter option 1:</label>
+					<input class = "textbox" id = "A" type = "text" name = "A" required>
+					<br>
+			
+					<label for = "B">Enter option 2:</label>
+					<input class = "textbox" id = "B" type = "text" name = "B" required>
+	
+					<input class = "submit" type = "Submit" value = "Submit">
+					<br>
+				</form>
+			</div>
+		</div>
+		
+	</body>
+</html>

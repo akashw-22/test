@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    
+	    <title>Voting</title>
+		
+		<link href="{{ url_for('static', filename='info.css') }}" rel="stylesheet"/>
+		
+	</head>
+	
+	<body>
+		
+		<div class = "wrapper">
+			<div class = "container">
+			
+				<p class = "head">Signup</p>
+				
+				<form id = "signup" method = "post" action = "/signup">
+				
+					<label class = "label" for = "name">Name</label>
+					<input class = "textbox" id = "name" name = "name" type = "text" required>
+					<br>
+					
+					<label class = "label" for = "age">Age</label>
+					<input class = "textbox" id = "age" name = "age" type = "number" onkeypress="return event.charCode >= 48" min="1"  required>
+					<br>
+				
+					<label class = "label" for = "username">Username</label>
+					<input class = "textbox" id = "username" name = "username" type = "text" required>
+					<br>
+				
+					<label class = "label" for = "password">Password</label>
+					<input class = "textbox" id = "password" name = "password" type = "password" required>
+					<br>
+				
+					<label class = "label" for = "confirm_p">Confirm</label>
+					<input class = "textbox" id = "confirm_p" name = "confirm_p" type = "password" required>
+					<br>
+				
+					<input class = "submit" type = "submit" value = "Signup">
+				</form>
+				
+				<br>
+				<p class = "description">Have an account?
+					<a class = "links" href = "{{url_for('login')}}">Login</a>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    
+	    <link href="{{ url_for('static', filename='info.css') }}" rel="stylesheet"/>
+	    
+	    
+	    <title>Voting</title>
+	
+	</head>
+	
+	<body>
+		
+		<div class = "wrapper">	
+			<div class = "container">
+				<p class = "head">Log In</p>
+				<form class = "login" method = "post" action = "/login">
+				
+					<label class = "label" for = "username">Username</label>
+					<input class = "textbox" id = "username" type = "text" name = "username" required>
+					<br>
+					
+					<label class = "label" for = "password">Password</label>
+					<input class = "textbox" id = "password" type = "password" name = "password" required>
+					<br>
+					<!-- add password visiblity if possible -->
+					
+					<input class = "submit" type = "submit" value = "Login">
+				</form>
+				
+				<br>
+				
+				<p class = "description">No account?
+				<a class = "links" href = "{{url_for('signup')}}">Sign Up</a>
+				</p>
+			</div>
+		</div>	
+
+	</body>
+</html>

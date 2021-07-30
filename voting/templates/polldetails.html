@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang = "en">
+
+	<head>
+		<meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link href="{{ url_for('static', filename='info.css') }}" rel="stylesheet"/>
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+	    <title>Voting</title>
+	
+	</head>
+	
+	<body>
+		<div class = "wrapper">
+			
+			<div class = "homebutton">
+				<a class = "menu" href = "{{url_for('yourpolls.yourpolls')}}">Back</a>
+			</div>
+			
+			<div class = "logout">
+				<a class = "menu" href = "{{url_for('logout')}}">Logout</a>
+			</div>
+			
+			<div class = "container">
+				<h2 class = "head">{{details[0][0]}} - Poll Name : {{details[0][1]}}</h2>
+		
+				<p class = "description">Description : {{details[0][2]}}</p>
+				
+				<div class = "details">
+					Start Time : {{details[0][3]}}
+					<br>
+					End Time : {{details[0][4]}}
+					<br>
+					<br>
+					
+					Total Participants : {{count}}
+				</div>
+					
+					<table class =  id = "my-chart">
+					{% for id, pollname, polldescription, starttime, endtime, optionname, optioncount in details %}
+						<tr>
+							<th scope = "row" > {{optionname}}</th>
+							<td style="--size:{{optioncount}};" ><p>{{optioncount}}</p></td>
+						</tr>
+	
+					{% endfor %}
+	
+					</table>
+				
+				<div class = "bar">	
+				
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	
+</html>
+		
